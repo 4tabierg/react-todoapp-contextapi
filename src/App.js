@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ToDoForm from './components/ToDoForm';
+import { AppProvider } from './context/AppContext';
+import ToDoList from './components/ToDoList';
+import './App.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <AppProvider>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-md-12'>
+        <h1 className='text-center mt-4 text-white'>ToDo App</h1>
+        </div>
+        <div className='col-md-6 offset-md-3 mt-4'>
+        <ToDoForm />
+        <ToDoList/>
+        </div>
+      </div>
     </div>
+    </AppProvider>
   );
 }
 
